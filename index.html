@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Just One Question 💖</title>
+  <style>
+    * { box-sizing: border-box; font-family: 'Segoe UI', Tahoma, sans-serif; }
+    body {
+      min-height: 100vh;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+    }
+    .card {
+      background: #fff;
+      padding: 30px;
+      max-width: 420px;
+      width: 90%;
+      border-radius: 18px;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+    h1 { margin-top: 0; color: #e75480; }
+    p { color: #444; line-height: 1.6; }
+    .buttons { margin-top: 25px; display: flex; gap: 15px; justify-content: center; }
+    button {
+      padding: 12px 22px;
+      border: none;
+      border-radius: 25px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    button:hover { transform: translateY(-2px); box-shadow: 0 8px 16px rgba(0,0,0,0.15); }
+    .yes { background: #e75480; color: #fff; }
+    .no { background: #ddd; }
+    img {
+      max-width: 100%;
+      border-radius: 14px;
+      margin: 20px 0;
+    }
+    .hidden { display: none; }
+    .final-text { margin-top: 15px; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div id="step1">
+      <h1>Do you love me? 💕</h1>
+      <p>Be honest… this question is important 😌</p>
+      <div class="buttons">
+        <button class="yes" onclick="sayYes()">Yes</button>
+        <button class="no" onclick="sayNo()">No</button>
+      </div>
+    </div>
+
+    <div id="step2" class="hidden">
+      <img src="cat.png" alt="Cat holding a gun" />
+      <h1>Wait a second 😳</h1>
+      <p>You might have clicked it by mistake…<br />I’m giving you one more chance.</p>
+      <div class="buttons">
+        <button class="yes" onclick="sayYes()">Yes</button>
+      </div>
+    </div>
+
+    <div id="step3" class="hidden">
+      <h1>❤️ I knew it ❤️</h1>
+      <p class="final-text">
+        You are someone who brings calm to chaos and warmth to ordinary moments.
+        Your smile has a way of making days brighter, and your presence alone feels
+        like comfort. The way you care, the way you listen, and the way you stay true
+        to yourself is what makes you so special to me.
+      </p>
+    </div>
+  </div>
+
+  <script>
+    function sayNo() {
+      document.getElementById('step1').classList.add('hidden');
+      document.getElementById('step2').classList.remove('hidden');
+    }
+    function sayYes() {
+      document.getElementById('step1').classList.add('hidden');
+      document.getElementById('step2').classList.add('hidden');
+      document.getElementById('step3').classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>
